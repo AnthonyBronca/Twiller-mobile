@@ -16,6 +16,9 @@ const PostBody = () => {
                 <Text style={[styles.userName, styles.dot]}>{'\u2B24'}</Text>
                 <Text style={[styles.userName, styles.date]}>5h</Text>
             </View>
+            <View style={styles.dotsContainer}>
+                <Text style={styles.dots}>...</Text>
+            </View>
         </View>
     );
 }
@@ -50,6 +53,14 @@ const styles = StyleSheet.create({
     },
     date: {
         paddingLeft: 7
+    },
+    dots: {
+        color: 'rgb(155,155,155)',
+        fontSize: 26
+    },
+    dotsContainer: {
+        left: 50,
+        bottom: 15
     }
 })
 
