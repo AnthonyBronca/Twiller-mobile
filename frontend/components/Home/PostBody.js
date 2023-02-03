@@ -1,10 +1,11 @@
 import React from 'react';
-import { View, Text, StyleSheet, SafeAreaView } from 'react-native';
+import { View, Text, StyleSheet, SafeAreaView, Image } from 'react-native';
 
 const PostBody = ({ postbody }) => {
     return (
         <SafeAreaView style={styles.container}>
-            <Text style={styles.caption}>{postbody}</Text>
+            {postbody.text.length > 0 ? <Text style={styles.caption}>{postbody.text}</Text> : null}
+            {postbody.image ? <Image style={styles.images} source={postbody.image} /> : null}
         </SafeAreaView>
     );
 }
@@ -23,6 +24,11 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         flexWrap: 'wrap',
         // height: 70,
+    },
+    images: {
+        width: '95%',
+        height: 280,
+        borderRadius: 10
     }
 })
 
