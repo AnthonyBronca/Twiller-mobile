@@ -31,7 +31,7 @@ const Post = () => {
                                 <Text style={styles.dots}>...</Text>
                             </View>
                         </View>
-                        <PostFooter />
+                        <PostFooter post={post} />
                         <Divider width={1} orientation='vertical' />
                     </View>
                 ))}
@@ -63,7 +63,8 @@ const styles = StyleSheet.create({
     tweetContent: {
         flexDirection: 'column',
         // backgroundColor: 'red',
-        width: '75%'
+        width: '75%',
+        paddingLeft: 12
     },
     dots: {
         color: 'rgb(155,155,155)',

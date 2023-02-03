@@ -12,6 +12,7 @@ const PostBody = ({ postbody }) => {
                 paused={false}                  // make it start
                 repeat={true}                   // make it a loop
                 style={styles.backgroundVideo} /> : null} */}
+            {postbody.location ? <Text style={styles.locationText}>{postbody.location}</Text> : null}
         </SafeAreaView>
     );
 }
@@ -43,6 +44,12 @@ const styles = StyleSheet.create({
         bottom: 0,
         right: 0,
     },
+    locationText: {
+        paddingTop: 5,
+        color: 'rgb(155,155,155)',
+        paddingBottom: 1,
+        paddingLeft: 1,
+    }
 })
 
 

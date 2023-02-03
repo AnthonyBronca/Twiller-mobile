@@ -6,14 +6,25 @@ import heart from '../../assets/heart.png'
 import share from '../../assets/share.png'
 
 
-const PostFooter = () => {
+const PostFooter = ({ post }) => {
     return (
         <View style={styles.outter}>
             <View style={styles.container}>
-                <Image style={styles.icons} source={comment} />
-                <Image style={styles.icons} source={retweet} />
-                <Image style={styles.icons} source={heart} />
-                <Image style={styles.icons} source={share} />
+                <View style={styles.iconContainer}>
+                    <Image style={styles.icons} source={comment} />
+                    <Text style={styles.iconInfo}>{post.commentCount}</Text>
+                </View>
+                <View style={styles.iconContainer}>
+                    <Image style={styles.icons} source={retweet} />
+                    <Text style={styles.iconInfo}>{post.retweetCount}</Text>
+                </View>
+                <View style={styles.iconContainer}>
+                    <Image style={styles.icons} source={heart} />
+                    <Text style={styles.iconInfo}>{post.likeCount}</Text>
+                </View>
+                <View style={styles.iconContainer}>
+                    <Image style={styles.icons} source={share} />
+                </View>
             </View>
         </View>
     );
@@ -38,6 +49,13 @@ const styles = StyleSheet.create({
         width: '60%',
         alignSelf: 'center',
         marginBottom: 15
+    },
+    iconContainer: {
+        flexDirection: 'row'
+    },
+    iconInfo: {
+        color: 'rgb(155,155,155)',
+        paddingLeft: 5
     }
 })
 
