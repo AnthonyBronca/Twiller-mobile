@@ -16,16 +16,13 @@ const PostHandle = ({ post }) => {
                 <Text style={[styles.userName, styles.date]}>{post.postTime}</Text>
                 {/* </View> */}
             </View>
-            <View style={styles.dotsContainer}>
-                <Text style={styles.dots}>...</Text>
-            </View>
         </View>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
-        marginLeft: 15,
+        marginLeft: 7,
         flexDirection: 'row'
     },
     handle: {
@@ -58,11 +55,9 @@ const styles = StyleSheet.create({
         color: 'rgb(155,155,155)',
         fontSize: 26
     },
-    // dotsContainer: {
-    //     flexDirection: 'row',
-    //     justifyContent: 'flex-end',
-    //     alignContent: 'flex-end'
-    // }
+    dotsContainer: {
+
+    }
 })
 
 

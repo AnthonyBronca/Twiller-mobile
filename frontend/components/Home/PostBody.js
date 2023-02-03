@@ -1,11 +1,11 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, SafeAreaView } from 'react-native';
 
 const PostBody = ({ postbody }) => {
     return (
-        <View>
+        <SafeAreaView style={styles.container}>
             <Text style={styles.caption}>{postbody}</Text>
-        </View>
+        </SafeAreaView>
     );
 }
 
@@ -16,7 +16,13 @@ const styles = StyleSheet.create({
         // bottom: 15,
         fontSize: 15,
         fontFamily: 'AvenirNext-Medium',
-        fontWeight: '500'
+        fontWeight: '500',
+    },
+    container: {
+        paddingLeft: 15,
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        // height: 70,
     }
 })
 
