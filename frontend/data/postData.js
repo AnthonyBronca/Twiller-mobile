@@ -1,6 +1,7 @@
 const profilePic = require('../assets/hero.jpg')
 const twitterProfile = require('../assets/twitter-logo.png')
 const tropy = require('../assets/trophy.png')
+import video from '../assets/testvideo.MP4'
 
 export const posts = [
 
@@ -13,7 +14,7 @@ export const posts = [
         body: {
             text: 'Twitter the last 24hrs 👀',
             image: '',
-            video: ''
+            video: video
         }
     },
     {
