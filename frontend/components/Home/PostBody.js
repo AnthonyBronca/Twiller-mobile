@@ -7,11 +7,11 @@ const PostBody = ({ postbody }) => {
         <SafeAreaView style={styles.container}>
             {postbody.text.length > 0 ? <Text style={styles.caption}>{postbody.text}</Text> : null}
             {postbody.image ? <Image style={styles.images} source={postbody.image} /> : null}
-            {postbody.video ? <Video
-                source={postbody.video}   // Can be a URL or a local file.
+            {/* {postbody.video ? <Video
+                source={''}   // Can be a URL or a local file.
                 paused={false}                  // make it start
                 repeat={true}                   // make it a loop
-                style={styles.backgroundVideo} /> : null}
+                style={styles.backgroundVideo} /> : null} */}
         </SafeAreaView>
     );
 }
