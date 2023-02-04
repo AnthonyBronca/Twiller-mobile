@@ -1,33 +1,94 @@
-import React from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import comment from '../../assets/comment.png'
 import retweet from '../../assets/retweet.png'
 import heart from '../../assets/heart.png'
 import share from '../../assets/share.png'
+import filledheart from '../../assets/filledheart.png'
+import filledretweet from '../../assets/filledretweet.png'
+import { useDispatch, useSelector } from 'react-redux';
+import { changeLike } from '../../redux/actions/likes';
 
 
-const PostFooter = ({ post }) => {
-    return (
-        <View style={styles.outter}>
-            <View style={styles.container}>
-                <View style={styles.iconContainer}>
-                    <Image style={styles.icons} source={comment} />
-                    <Text style={styles.iconInfo}>{post.commentCount}</Text>
-                </View>
-                <View style={styles.iconContainer}>
-                    <Image style={styles.icons} source={retweet} />
-                    <Text style={styles.iconInfo}>{post.retweetCount}</Text>
-                </View>
-                <View style={styles.iconContainer}>
-                    <Image style={styles.icons} source={heart} />
-                    <Text style={styles.iconInfo}>{post.likeCount}</Text>
-                </View>
-                <View style={styles.iconContainer}>
-                    <Image style={styles.icons} source={share} />
+const PostFooter = ({ post, currentUser }) => {
+
+    // const dispatch = useDispatch();
+    // const likes = useSelector((state) => state?.likes);
+
+    // const [likedState, setLikedState] = useState(likes);
+    const [isLoaded, setIsLoaded] = useState(true);
+
+    // useEffect(() => {
+    //     // dispatch(changeLike(post))
+    //     // .then(()=>{
+    //     //     setLikedState(currentUser.likedPost)
+    //     // })
+    //     // console.log(currentUser
+    // })
+
+
+    const handleLike = async (post) => {
+        // console.log(currentUser.likedPost)
+
+        // console.log(post.id)
+        try {
+            // dispatch(changeLike(post));
+
+        } catch (error) {
+            console.log(error)
+        }
+        // dispatch(changeLike(post))
+        //     .then(() => {
+        //         setLikedState(likes)
+        //     })
+        //     .then(() => {
+        //         console.log(likes)
+        //     })
+
+        if (currentUser.likedPost[`${post.id}`]) {
+            delete currentUser.likedPost[`${post.id}`]
+        } else {
+            currentUser.likedPost = [`${post.id}`]
+        }
+    }
+
+
+    if (!isLoaded) {
+        return null;
+    } else {
+        return (
+            <View style={styles.outter}>
+                <View style={styles.container}>
+                    <View style={styles.iconContainer}>
+                        <Image style={styles.icons} source={comment} />
+                        <Text style={styles.iconInfo}>{post.commentCount}</Text>
+                    </View>
+                    <View style={styles.iconContainer}>
+                        {/* {console.log(currentUser, "this is current user")} */}
+                        {/* {currentUser.retweets[`${post.id}`] ?
+                            <TouchableOpacity>
+                                <Image style={styles.icons} source={filledretweet} />
+                            </TouchableOpacity>
+                            : <Image style={styles.icons} source={retweet} />} */}
+                        <Text style={styles.iconInfo}>{post.retweetCount}</Text>
+                    </View>
+                    <View style={styles.iconContainer}>
+                        {/* {currentUser.likes[`${post.id}`] ?
+                            <TouchableOpacity onPress={() => handleLike(post)}>
+                                <Image style={[styles.icons, {}]} source={filledheart} />
+                            </TouchableOpacity>
+                            : <TouchableOpacity onPress={() => handleLike(post)}>
+                                <Image style={[styles.icons, {}]} source={heart} />
+                            </TouchableOpacity>} */}
+                        <Text style={styles.iconInfo}>{post.likeCount}</Text>
+                    </View>
+                    <View style={styles.iconContainer}>
+                        <Image style={styles.icons} source={share} />
+                    </View>
                 </View>
             </View>
-        </View>
-    );
+        );
+    }
 }
 
 

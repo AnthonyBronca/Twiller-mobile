@@ -6,7 +6,7 @@ import PostBody from './PostBody';
 import { posts } from '../../data/postData';
 import { Divider } from 'react-native-elements';
 import PostFooter from './PostFooter';
-
+import { currentUser } from '../../data/user';
 
 const Post = () => {
 
@@ -31,7 +31,7 @@ const Post = () => {
                                 <Text style={styles.dots}>...</Text>
                             </View>
                         </View>
-                        <PostFooter post={post} />
+                        <PostFooter post={post} currentUser={currentUser} />
                         <Divider width={1} orientation='vertical' />
                     </View>
                 ))}

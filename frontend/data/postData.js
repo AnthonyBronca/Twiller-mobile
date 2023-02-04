@@ -287,7 +287,7 @@ function retweetMaker(post) {
 function locationAdder(post) {
     if (post.body.image) {
         post.body.location = 'Iowa State Athletics'
-        console.log(post, "this is the current post")
+        // console.log(post, "this is the current post")
     }
 }
 
