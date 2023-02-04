@@ -8,42 +8,48 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      fullname: {
-        type: Sequelize.STRING
-      },
       username: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(50),
+        allowNull: false,
+        unique: true
+      },
+      fullname: {
+        type: Sequelize.STRING(50),
+        allowNull: false
       },
       email: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(500),
+        allowNull: false,
+        unique: true
       },
       bio: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT()
       },
-      profileURL: {
-        type: Sequelize.STRING
+      profilePic: {
+        type: Sequelize.STRING(255)
       },
       hashedPassword: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(255),
+        allowNull: false
       },
       verified: {
         type: Sequelize.BOOLEAN
       },
       state: {
-        type: Sequelize.STRING
-      },
-      link: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(100),
       },
       country: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(100)
+      },
+      link: {
+        type: Sequelize.TEXT()
       },
       createdAt: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.DATE
       },
       updatedAt: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.DATE
       }
     });
