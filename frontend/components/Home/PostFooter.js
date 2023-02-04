@@ -7,14 +7,16 @@ import share from '../../assets/share.png'
 import filledheart from '../../assets/filledheart.png'
 import filledretweet from '../../assets/filledretweet.png'
 import { useDispatch, useSelector } from 'react-redux';
-import { changeLike } from '../../redux/actions/likes';
 
 
-const PostFooter = ({ post, currentUser }) => {
+const PostFooter = ({ tweet, currentUser }) => {
 
     // const dispatch = useDispatch();
     // const likes = useSelector((state) => state?.likes);
 
+    const tweets = useSelector(state => state)
+
+    // console.log(tweets, "que es esto?")
     // const [likedState, setLikedState] = useState(likes);
     const [isLoaded, setIsLoaded] = useState(true);
 
@@ -58,29 +60,31 @@ const PostFooter = ({ post, currentUser }) => {
     } else {
         return (
             <View style={styles.outter}>
+                {/* {console.log(tweet)} */}
                 <View style={styles.container}>
                     <View style={styles.iconContainer}>
                         <Image style={styles.icons} source={comment} />
-                        <Text style={styles.iconInfo}>{post.commentCount}</Text>
+                        <Text style={styles.iconInfo}>{tweet.Comments.length}</Text>
+                        {console.log(tweet, "???")}
                     </View>
                     <View style={styles.iconContainer}>
                         {/* {console.log(currentUser, "this is current user")} */}
-                        {/* {currentUser.retweets[`${post.id}`] ?
-                            <TouchableOpacity>
-                                <Image style={styles.icons} source={filledretweet} />
-                            </TouchableOpacity>
-                            : <Image style={styles.icons} source={retweet} />} */}
-                        <Text style={styles.iconInfo}>{post.retweetCount}</Text>
+                        {/* {currentUser.retweets[`${post.id}`] ? */}
+                        <TouchableOpacity>
+                            <Image style={styles.icons} source={filledretweet} />
+                        </TouchableOpacity>
+                        {/* : <Image style={styles.icons} source={retweet} />} */}
+                        <Text style={styles.iconInfo}>{3}</Text>
                     </View>
                     <View style={styles.iconContainer}>
-                        {/* {currentUser.likes[`${post.id}`] ?
-                            <TouchableOpacity onPress={() => handleLike(post)}>
-                                <Image style={[styles.icons, {}]} source={filledheart} />
-                            </TouchableOpacity>
-                            : <TouchableOpacity onPress={() => handleLike(post)}>
-                                <Image style={[styles.icons, {}]} source={heart} />
-                            </TouchableOpacity>} */}
-                        <Text style={styles.iconInfo}>{post.likeCount}</Text>
+                        {/* {currentUser.likes[`${post.id}`] ? */}
+                        <TouchableOpacity onPress={() => handleLike(post)}>
+                            <Image style={[styles.icons, {}]} source={filledheart} />
+                        </TouchableOpacity>
+                        {/* : <TouchableOpacity onPress={() => handleLike(post)}> */}
+                        {/* <Image style={[styles.icons, {}]} source={heart} /> */}
+                        {/* </TouchableOpacity>} */}
+                        <Text style={styles.iconInfo}>{10}</Text>
                     </View>
                     <View style={styles.iconContainer}>
                         <Image style={styles.icons} source={share} />

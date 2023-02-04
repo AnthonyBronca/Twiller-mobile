@@ -80,7 +80,7 @@
 
 
 // posts.forEach(post => {
-//     if(currentUser.likedPost[`${post.id}`]){
+//     if (currentUser.likedPost[`${post.id}`]) {
 //         currentUser.likedPost
 //     }
 // })

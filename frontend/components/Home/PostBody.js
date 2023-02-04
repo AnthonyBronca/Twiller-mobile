@@ -1,18 +1,21 @@
 import React from 'react';
 import { View, Text, StyleSheet, SafeAreaView, Image } from 'react-native';
 import Video from 'react-native-video';
+import trophy from '../../assets/trophy.png'
+import FastImage from 'react-native-fast-image';
 
-const PostBody = ({ postbody }) => {
+const PostBody = ({ tweet }) => {
+    console.log(tweet, "will this work?")
     return (
         <SafeAreaView style={styles.container}>
-            {postbody.text.length > 0 ? <Text style={styles.caption}>{postbody.text}</Text> : null}
-            {postbody.image ? <Image style={styles.images} source={postbody.image} /> : null}
+            {tweet.tweet.length > 0 ? <Text style={styles.caption}>{tweet.tweet}</Text> : null}
+            {tweet.imgUrl ? <Image style={styles.images} source={{ uri: tweet.imgUrl }} /> : null}
             {/* {postbody.video ? <Video
                 source={''}   // Can be a URL or a local file.
                 paused={false}                  // make it start
                 repeat={true}                   // make it a loop
                 style={styles.backgroundVideo} /> : null} */}
-            {postbody.location ? <Text style={styles.locationText}>{postbody.location}</Text> : null}
+            {tweet.User.fullname === 'Demo User' ? <Text style={styles.locationText}>{" University Of Central Florida"}</Text> : null}
         </SafeAreaView>
     );
 }

@@ -5,6 +5,7 @@ import TopBar from '../../components/Home/TopBar';
 
 const Home = () => {
     return (
+
         <SafeAreaView style={styles.theme} >
             <TopBar />
             <Post />

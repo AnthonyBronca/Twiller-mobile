@@ -2,19 +2,19 @@ import React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
 import verified from '../../assets/badge.png'
 
-const PostHandle = ({ post }) => {
+const PostHandle = ({ tweet }) => {
 
-
+    // console.log(tweet)
     return (
         <View style={styles.container}>
             <View style={styles.container}>
-                <Text style={styles.handle}>{post.handle}</Text>
-                {post.verified ? <Image source={verified} style={styles.verified} /> : null}
-                {/* <View> */}
-                <Text style={styles.userName}>{`@${post.username}`}</Text>
-                <Text style={[styles.userName, styles.dot]}>{'\u2B24'}</Text>
-                <Text style={[styles.userName, styles.date]}>{post.postTime}</Text>
-                {/* </View> */}
+                <Text style={styles.handle}>{tweet.User.username}</Text>
+                {tweet.User.id === 2 ? <Image source={verified} style={styles.verified} /> : null}
+                <View style={{ flexDirection: 'row' }}>
+                    <Text style={styles.userName}>{`@${tweet.User.fullname}`}</Text>
+                    <Text style={[styles.userName, styles.dot]}>{'\u2B24'}</Text>
+                    <Text style={[styles.userName, styles.date]}>{'5h'}</Text>
+                </View>
             </View>
         </View>
     );
@@ -23,7 +23,8 @@ const PostHandle = ({ post }) => {
 const styles = StyleSheet.create({
     container: {
         marginLeft: 7,
-        flexDirection: 'row'
+        flexDirection: 'row',
+        // backgroundColor: 'blue'
     },
     handle: {
         color: 'white',
