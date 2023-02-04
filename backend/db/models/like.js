@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
     Like.belongsTo(models.User, {
       foreignKey: 'userId'
     }),
-      Like, belongsTo(models.Tweet, {
+      Like.belongsTo(models.Tweet, {
         foreignKey: 'tweetId'
       })
   };

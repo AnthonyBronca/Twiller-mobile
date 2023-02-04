@@ -113,22 +113,22 @@ module.exports = (sequelize, DataTypes) => {
       User.hasMany(models.Comment, {
         foreignKey: 'userId'
       })
-    User.hasmany(models.Like, {
+    User.hasMany(models.Like, {
       foreignKey: 'userId',
       onDelete: 'CASCADE',
       hooks: true
     }),
-      User.hasmany(models.Retweet, {
+      User.hasMany(models.Retweet, {
         foreignKey: 'userId',
         onDelete: 'CASCADE',
         hooks: true
       }),
-      // User.hasmany(models.Follows, {
+      // User.hasMany(models.Follows, {
       //   foreignKey: 'userId',
       //   onDelete: 'CASCADE',
       //   hooks: true
       // }),
-      User.hasmany(models.Reply, {
+      User.hasMany(models.Reply, {
         foreignKey: 'userId',
         onDelete: 'CASCADE',
         hooks: true
