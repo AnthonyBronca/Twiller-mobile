@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, Image, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, Image, ScrollView, TouchableOpacity } from 'react-native';
 import hero from '../../assets/hero.jpg'
 import PostHandle from './PostHandle';
 import PostBody from './PostBody';
@@ -10,6 +10,8 @@ import { currentUser } from '../../data/user';
 import { useDispatch, useSelector } from 'react-redux';
 // import { getTweetsThunk } from '../../redux/thunks/tweets';
 import { getTweetsThunk } from '../../store/tweets';
+
+import Spinner from '../Loading/Spinner';
 const Post = () => {
 
     const dispatch = useDispatch();
@@ -29,7 +31,7 @@ const Post = () => {
     }, [isLoaded]);
 
     if (!isLoaded) {
-        return <Text>Loading...</Text>
+        return <Spinner />
     } else {
 
         return (
@@ -38,7 +40,9 @@ const Post = () => {
                     {tweets.map((tweet, idx) => (
                         <View key={idx} style={styles.postContainer}>
                             <View style={{ flexDirection: 'row', paddingBottom: 10, paddingTop: 2 }}>
-                                <Image style={styles.profileImage} source={{ uri: tweet.User.profilePic }} />
+                                <TouchableOpacity>
+                                    <Image style={styles.profileImage} source={{ uri: tweet.User.profilePic }} />
+                                </TouchableOpacity>
                                 <View style={styles.tweetContent}>
                                     <PostHandle tweet={tweet} />
                                     <View style={styles.bodyContainer}>

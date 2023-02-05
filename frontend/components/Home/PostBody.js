@@ -5,7 +5,7 @@ import trophy from '../../assets/trophy.png'
 import FastImage from 'react-native-fast-image';
 
 const PostBody = ({ tweet }) => {
-    console.log(tweet, "will this work?")
+    // console.log(tweet, "will this work?")
     return (
         <SafeAreaView style={styles.container}>
             {tweet.tweet.length > 0 ? <Text style={styles.caption}>{tweet.tweet}</Text> : null}
@@ -28,6 +28,7 @@ const styles = StyleSheet.create({
         fontSize: 15,
         fontFamily: 'AvenirNext-Medium',
         fontWeight: '500',
+        paddingBottom: 10
     },
     container: {
         paddingLeft: 15,
@@ -38,7 +39,8 @@ const styles = StyleSheet.create({
     images: {
         width: '95%',
         height: 280,
-        borderRadius: 10
+        borderRadius: 10,
+        paddingTop: 3
     },
     backgroundVideo: {
         position: 'absolute',
