@@ -22,18 +22,18 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
     },
     logo: {
-        height: 30,
-        width: 30,
+        height: 35,
+        width: 35,
         // marginLeft: 10
     },
     sparkles: {
-        height: 30,
-        width: 30,
+        height: 35,
+        width: 35,
         marginRight: 20
     },
     profileImage: {
-        height: 30,
-        width: 30,
+        height: 35,
+        width: 35,
         borderRadius: '50%',
         marginLeft: 20
     }

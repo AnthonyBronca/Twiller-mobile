@@ -10,7 +10,7 @@ const Home = () => {
         <SafeAreaView style={styles.theme} >
             <TopBar />
             <Post />
-            {/* <BottomTabs /> */}
+            <BottomTabs currentScreen={'home'} />
         </SafeAreaView>
     );
 }
