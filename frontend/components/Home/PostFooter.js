@@ -65,7 +65,6 @@ const PostFooter = ({ tweet, currentUser }) => {
                     <View style={styles.iconContainer}>
                         <Image style={styles.icons} source={comment} />
                         <Text style={styles.iconInfo}>{tweet.Comments.length}</Text>
-                        {console.log(tweet, "???")}
                     </View>
                     <View style={styles.iconContainer}>
                         {/* {console.log(currentUser, "this is current user")} */}

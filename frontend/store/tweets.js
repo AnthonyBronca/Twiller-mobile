@@ -1,8 +1,5 @@
 import { csrfFetch } from "./csrf";
 
-
-
-
 const GET_TWEETS = 'tweets/getTweets';
 const ADD_TWEET = 'tweets/addTweet'
 const UPDATE_TWEET = 'tweets/updateTweet'
@@ -108,7 +105,6 @@ export const addTweetThunk = (formValues) => async (dispatch) => {
 export const getTweetsThunk = () => async (dispatch) => {
     // const response = await fetch('https://application-mock-server.loca.lt/api/tweets')
     const response = await fetch(`http://192.168.2.4:5000/api/tweets`);
-    console.log(response, "this is the response%%%%%%%%%%%%%%%%%%%")
     if (response.ok) {
         const tweets = await response.json();
         dispatch(getTweets(tweets));
