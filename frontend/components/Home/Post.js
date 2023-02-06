@@ -38,47 +38,33 @@ const Post = () => {
             <ScrollView>
                 <View style={{ flexDirection: 'column' }}>
                     {tweets.map((tweet, idx) => (
-                        <View key={idx} style={styles.postContainer}>
-                            <View style={{ flexDirection: 'row', paddingBottom: 10, paddingTop: 2 }}>
-                                <TouchableOpacity>
-                                    <Image style={styles.profileImage} source={{ uri: tweet.User.profilePic }} />
-                                </TouchableOpacity>
-                                <View style={styles.tweetContent}>
-                                    <PostHandle tweet={tweet} />
-                                    <View style={styles.bodyContainer}>
-                                        <PostBody tweet={tweet} />
+                        <TouchableOpacity onPress={() => console.log('post')}>
+                            <View key={idx} style={styles.postContainer}>
+                                <View style={{ flexDirection: 'row', paddingBottom: 10, paddingTop: 2 }}>
+                                    <View>
+                                        <TouchableOpacity onPress={() => console.log('photo')}>
+                                            <Image style={styles.profileImage} source={{ uri: tweet.User.profilePic }} />
+                                        </TouchableOpacity>
+                                    </View>
+                                    <View style={[styles.tweetContent]}>
+                                        <TouchableOpacity>
+                                            <PostHandle tweet={tweet} />
+                                            <View style={styles.bodyContainer}>
+                                                <PostBody tweet={tweet} />
+                                            </View>
+                                        </TouchableOpacity>
+                                    </View>
+                                    <View style={[styles.dotsContainer]}>
+                                        <Text style={styles.dots}>...</Text>
                                     </View>
                                 </View>
-                                <View style={styles.dotsContainer}>
-                                    <Text style={styles.dots}>...</Text>
-                                </View>
+                                <PostFooter tweet={tweet} currentUser={currentUser} />
                             </View>
-                            <PostFooter tweet={tweet} currentUser={currentUser} />
                             <Divider width={1} orientation='vertical' />
-                        </View>
+                        </TouchableOpacity>
                     )
 
                     )}
-                    {/* {posts.map((post, idx) => (
-                        <View key={idx} style={styles.postContainer}>
-                            <View style={{ flexDirection: 'row', paddingBottom: 10, paddingTop: 2 }}>
-                                <Image style={styles.profileImage} source={post.profilePic} />
-                                <View style={styles.tweetContent}>
-
-                                    <PostHandle post={post} />
-                                    <View style={styles.bodyContainer}>
-                                        <PostBody postbody={post.body} />
-                                    </View>
-                                </View>
-
-                                <View style={styles.dotsContainer}>
-                                    <Text style={styles.dots}>...</Text>
-                                </View>
-                            </View>
-                            <PostFooter post={post} currentUser={currentUser} />
-                            <Divider width={1} orientation='vertical' />
-                        </View>
-                    ))} */}
                 </View>
             </ScrollView>
         );

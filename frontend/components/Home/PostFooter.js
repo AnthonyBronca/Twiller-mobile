@@ -98,7 +98,7 @@ const PostFooter = ({ tweet, currentUser }) => {
 const styles = StyleSheet.create({
     icons: {
         height: 17,
-        width: 17
+        width: 17,
     },
     container: {
         flexDirection: 'row',
@@ -112,10 +112,12 @@ const styles = StyleSheet.create({
     outter: {
         width: '60%',
         alignSelf: 'center',
-        marginBottom: 15
+        marginBottom: 25,
+        marginTop: 5,
+        marginLeft: 5
     },
     iconContainer: {
-        flexDirection: 'row'
+        flexDirection: 'row',
     },
     iconInfo: {
         color: 'rgb(155,155,155)',
