@@ -1,0 +1,112 @@
+import React from 'react';
+import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
+import verified from '../../assets/badge.png'
+
+
+const Header = ({ tweetInfo }) => {
+    return (
+        <View style={styles.container}>
+            <View style={styles.profileImageContainer}>
+                <TouchableOpacity onPress={() => console.log('profile')}>
+                    <Image style={styles.profileImage} source={{ uri: tweetInfo.User.profilePic }} />
+                </TouchableOpacity>
+            </View>
+
+            <View style={styles.innercontainer}>
+                <View>
+                    <View style={{ flexDirection: 'row' }}>
+                        <Text style={styles.handle}>{tweetInfo.User.username}</Text>
+                        {tweetInfo.User.id === 2 ? <Image source={verified} style={styles.verified} /> : null}
+                    </View>
+                    <View style={{ flexDirection: 'column' }}>
+                        <Text style={styles.userName}>{`@${tweetInfo.User.fullname}`}</Text>
+                    </View>
+                </View>
+            </View>
+            <View style={[styles.dotsContainer]}>
+                <Text style={styles.dots}>...</Text>
+            </View>
+            {console.log(tweetInfo)}
+        </View>
+    );
+}
+
+
+const styles = StyleSheet.create({
+    profileImage: {
+        height: 50,
+        width: 50,
+        borderRadius: '50%',
+        marginLeft: 20,
+        marginTop: 30,
+    },
+    container: {
+        backgroundColor: 'blue',
+        flexDirection: 'row',
+        marginTop: 10,
+    },
+    profileImageContainer: {
+        backgroundColor: 'orange',
+
+    },
+    test: {
+        color: 'white',
+        backgroundColor: 'red',
+        fontSize: '30'
+    },
+    info: {
+        flexDirection: 'column'
+    },
+    container: {
+        marginLeft: 7,
+        flexDirection: 'row',
+        backgroundColor: 'blue'
+    },
+    innercontainer: {
+        paddingLeft: 10,
+        flexDirection: 'column',
+        backgroundColor: 'purple',
+        width: '75%',
+        justifyContent: 'flex-end'
+    },
+    handle: {
+        color: 'white',
+        fontWeight: '700',
+        fontSize: 20,
+        fontFamily: 'AvenirNext-Regular'
+    },
+    verified: {
+        height: 20,
+        width: 20,
+        left: 3,
+        top: 3
+    },
+    userName: {
+        color: 'rgb(155,155,155)',
+        paddingLeft: 5,
+        fontSize: 15,
+        fontFamily: 'AvenirNext-Regular',
+        fontWeight: '600'
+    },
+    dot: {
+        fontSize: 2,
+        top: 9,
+        left: 1
+    },
+    date: {
+        paddingLeft: 7
+    },
+    dots: {
+        color: 'rgb(155,155,155)',
+        fontSize: 26,
+        backgroundColor: 'red',
+    },
+    dotsContainer: {
+        flexDirection: 'row',
+        justifyContent: 'flex-end',
+        width: 30,
+    }
+})
+
+
+export default Header;

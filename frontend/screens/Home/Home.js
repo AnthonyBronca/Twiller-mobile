@@ -4,12 +4,12 @@ import Post from '../../components/Home/Post';
 import TopBar from '../../components/Home/TopBar';
 import BottomTabs from '../../components/Navigation/BottomTabs';
 
-const Home = () => {
+const Home = ({ navigation }) => {
     return (
 
         <SafeAreaView style={styles.theme} >
             <TopBar />
-            <Post />
+            <Post navigation={navigation} />
             <BottomTabs currentScreen={'home'} />
         </SafeAreaView>
     );
