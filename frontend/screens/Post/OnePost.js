@@ -3,6 +3,7 @@ import { View, Text, SafeAreaView, StyleSheet, ScrollView, TouchableOpacity, Ima
 import { Divider } from 'react-native-elements';
 import goback from '../../assets/goback.png'
 import OnePostHeader from '../../components/Navigation/OnePostHeader';
+import Body from '../../components/OnePost/Body';
 import Header from '../../components/OnePost/Header';
 
 const OnePost = (tweet) => {
@@ -20,6 +21,7 @@ const OnePost = (tweet) => {
             <ScrollView stickyHeaderHiddenOnScroll={true}>
                 <OnePostHeader tweet={tweet} />
                 <Header tweetInfo={tweetInfo} />
+                <Body tweetInfo={tweetInfo} />
             </ScrollView>
         </SafeAreaView >
     );

@@ -26,7 +26,6 @@ const Header = ({ tweetInfo }) => {
             <View style={[styles.dotsContainer]}>
                 <Text style={styles.dots}>...</Text>
             </View>
-            {console.log(tweetInfo)}
         </View>
     );
 }
@@ -43,6 +42,7 @@ const styles = StyleSheet.create({
         paddingLeft: 10,
         flexDirection: 'row',
         // backgroundColor: 'orange',
+        marginRight: 25
 
     },
     profileButton: {
@@ -51,25 +51,18 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignContent: 'center'
     },
-    test: {
-        color: 'white',
-        // backgroundColor: 'red',
-        fontSize: '30'
-    },
-    info: {
-        flexDirection: 'column'
-    },
     container: {
         marginTop: 5,
         flexDirection: 'row',
-        // backgroundColor: 'blue'
+        // backgroundColor: 'blue',
+        justifyContent: 'space-between'
     },
     innercontainer: {
-        paddingLeft: 10,
-        flexDirection: 'column',
+        // paddingLeft: 10,
+        flexDirection: 'row',
         // backgroundColor: 'purple',
-        width: '75%',
-        justifyContent: 'flex-end'
+        width: '70%',
+        justifyContent: 'flex-start'
     },
     handle: {
         color: 'white',
