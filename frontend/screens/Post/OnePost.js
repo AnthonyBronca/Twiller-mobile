@@ -1,5 +1,5 @@
-import React from 'react';
-import { View, Text, SafeAreaView, StyleSheet, ScrollView, TouchableOpacity, Image } from 'react-native';
+import React, { useRef } from 'react';
+import { View, Text, SafeAreaView, StyleSheet, ScrollView, TouchableOpacity, Image, TextInput, Keyboard, TextField } from 'react-native';
 import { Divider } from 'react-native-elements';
 import goback from '../../assets/goback.png'
 import PostFooter from '../../components/Home/PostFooter';
@@ -12,7 +12,7 @@ import { currentUser } from '../../data/user'
 const OnePost = (tweet) => {
 
     const tweetInfo = tweet.route.params
-
+    const inputRef = useRef();
 
     const handleGoBack = (e) => {
         e.preventDefault();
@@ -27,6 +27,16 @@ const OnePost = (tweet) => {
                 <Body tweetInfo={tweetInfo} />
                 <PostFooter tweet={tweetInfo} currentUser={currentUser} />
             </ScrollView>
+            {/* <TextField> */}
+            {/* <TextInput
+                placeholder='Tweet your reply'
+                // ref={inputRef}
+                // onLayout={() => inputRef.current.focus()}
+                placeholderTextColor={'rgb(155,155,155)'}
+                spellCheck={true}
+                keyboardType={'twitter'}
+                style={{ color: 'white', marginLeft: 50 }}></TextInput> */}
+            {/* </TextField> */}
         </SafeAreaView >
     );
 }
