@@ -10,7 +10,6 @@ import { useDispatch, useSelector } from 'react-redux';
 
 
 const PostFooter = ({ tweet, currentUser }) => {
-
     // const dispatch = useDispatch();
     // const likes = useSelector((state) => state?.likes);
 

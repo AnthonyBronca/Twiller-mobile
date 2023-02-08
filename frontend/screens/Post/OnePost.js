@@ -2,9 +2,12 @@ import React from 'react';
 import { View, Text, SafeAreaView, StyleSheet, ScrollView, TouchableOpacity, Image } from 'react-native';
 import { Divider } from 'react-native-elements';
 import goback from '../../assets/goback.png'
+import PostFooter from '../../components/Home/PostFooter';
 import OnePostHeader from '../../components/Navigation/OnePostHeader';
 import Body from '../../components/OnePost/Body';
 import Header from '../../components/OnePost/Header';
+import { currentUser } from '../../data/user'
+
 
 const OnePost = (tweet) => {
 
@@ -22,6 +25,7 @@ const OnePost = (tweet) => {
                 <OnePostHeader tweet={tweet} />
                 <Header tweetInfo={tweetInfo} />
                 <Body tweetInfo={tweetInfo} />
+                <PostFooter tweet={tweetInfo} currentUser={currentUser} />
             </ScrollView>
         </SafeAreaView >
     );
