@@ -104,7 +104,7 @@ export const addTweetThunk = (formValues) => async (dispatch) => {
 
 export const getTweetsThunk = () => async (dispatch) => {
     // const response = await fetch('https://application-mock-server.loca.lt/api/tweets')
-    const response = await fetch(`http://192.168.2.4:5000/api/tweets`);
+    const response = await fetch(`http://192.168.2.3:5000/api/tweets`);
     if (response.ok) {
         const tweets = await response.json();
         dispatch(getTweets(tweets));

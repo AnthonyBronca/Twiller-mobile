@@ -7,7 +7,7 @@ const Header = ({ tweetInfo }) => {
     return (
         <View style={styles.container}>
             <View style={styles.profileImageContainer}>
-                <TouchableOpacity onPress={() => console.log('profile')}>
+                <TouchableOpacity style={styles.profileButton} onPress={() => console.log('profile')}>
                     <Image style={styles.profileImage} source={{ uri: tweetInfo.User.profilePic }} />
                 </TouchableOpacity>
             </View>
@@ -37,35 +37,37 @@ const styles = StyleSheet.create({
         height: 50,
         width: 50,
         borderRadius: '50%',
-        marginLeft: 20,
-        marginTop: 30,
-    },
-    container: {
-        backgroundColor: 'blue',
-        flexDirection: 'row',
-        marginTop: 10,
+        // backgroundColor: 'purple'
     },
     profileImageContainer: {
-        backgroundColor: 'orange',
+        paddingLeft: 10,
+        flexDirection: 'row',
+        // backgroundColor: 'orange',
 
+    },
+    profileButton: {
+        // backgroundColor: 'red'
+        flex: '1',
+        justifyContent: 'center',
+        alignContent: 'center'
     },
     test: {
         color: 'white',
-        backgroundColor: 'red',
+        // backgroundColor: 'red',
         fontSize: '30'
     },
     info: {
         flexDirection: 'column'
     },
     container: {
-        marginLeft: 7,
+        marginTop: 5,
         flexDirection: 'row',
-        backgroundColor: 'blue'
+        // backgroundColor: 'blue'
     },
     innercontainer: {
         paddingLeft: 10,
         flexDirection: 'column',
-        backgroundColor: 'purple',
+        // backgroundColor: 'purple',
         width: '75%',
         justifyContent: 'flex-end'
     },
@@ -99,11 +101,11 @@ const styles = StyleSheet.create({
     dots: {
         color: 'rgb(155,155,155)',
         fontSize: 26,
-        backgroundColor: 'red',
+        // backgroundColor: 'red',
     },
     dotsContainer: {
-        flexDirection: 'row',
-        justifyContent: 'flex-end',
+        flexDirection: 'column',
+        justifyContent: 'flex-start',
         width: 30,
     }
 })

@@ -1,8 +1,8 @@
 import React from 'react';
 import { View, Text, StyleSheet, SafeAreaView, Image } from 'react-native';
-import Video from 'react-native-video';
+// import Video from 'react-native-video';
 import trophy from '../../assets/trophy.png'
-import FastImage from 'react-native-fast-image';
+// import FastImage from 'react-native-fast-image';
 
 const PostBody = ({ tweet }) => {
     // console.log(tweet, "will this work?")

@@ -43,7 +43,7 @@ const Post = ({ navigation }) => {
 
         return (
             <ScrollView>
-                <View style={{ flexDirection: 'column' }}>
+                <View style={styles.headerContainer}>
                     {tweets.map((tweet, idx) => (
                         <View key={idx}>
                             <TouchableOpacity onPress={(e) => handleOneTweet(e, tweet)}>
@@ -119,6 +119,9 @@ const styles = StyleSheet.create({
         // backgroundColor: 'purple',
         width: '100%',
         marginLeft: 15
+    },
+    headerContainer: {
+        flexDirection: 'column'
     }
 })
 
