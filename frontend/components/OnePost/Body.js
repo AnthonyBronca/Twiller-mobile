@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
+import { Divider } from 'react-native-elements';
 
 const Body = ({ tweetInfo }) => {
 
@@ -155,6 +156,22 @@ const Body = ({ tweetInfo }) => {
                 <Text style={[styles.dateText, styles.dot]} >{'\u2B24'}</Text>
                 <Text style={[styles.dateText, { paddingLeft: 5 }]}>{handleDate(tweetInfo.createdAt)}</Text>
             </View>
+            <Divider style={{ marginTop: 15 }} width={1} orientation='vertical' />
+            <View style={styles.info}>
+                <View style={{ flexDirection: 'row' }}>
+                    <Text style={[styles.infoNumbers, { paddingRight: 5 }]}>1,589</Text>
+                    <Text style={[styles.dateText, { paddingRight: 5 }]}>Retweets</Text>
+                </View>
+                <View style={{ flexDirection: 'row' }}>
+                    <Text style={[styles.infoNumbers, { paddingRight: 5 }]}>1,269</Text>
+                    <Text style={[styles.dateText, { paddingRight: 5 }]}>Quote Tweets</Text>
+                </View>
+                <View style={{ flexDirection: 'row' }}>
+                    <Text style={[styles.infoNumbers, { paddingRight: 5 }]}>15.4K</Text>
+                    <Text style={[styles.dateText, { paddingRight: 5 }]}>Likes</Text>
+                </View>
+            </View>
+            <Divider style={{ marginTop: 15 }} width={1} orientation='vertical' />
         </View>
     );
 }
@@ -189,13 +206,22 @@ const styles = StyleSheet.create({
 
     },
     dateText: {
-        color: 'rgb(155,155,155)'
+        color: 'rgb(155,155,155)',
+        fontSize: 15
     },
     dot: {
         fontSize: 2,
         top: 9,
         left: 1
     },
+    info: {
+        flexDirection: 'row',
+        paddingTop: 15,
+        justifyContent: 'space-around'
+    },
+    infoNumbers: {
+        color: 'white'
+    }
 })
 
 
